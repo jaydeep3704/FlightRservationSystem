@@ -46,7 +46,7 @@ public class FlightSearchController {
     public void logout(ActionEvent event) throws IOException {
 
         SceneChanger sChanger=new SceneChanger();
-        sChanger.changeScene(event,"login.fxml");
+        sChanger.changeScene(event,"login.fxml","Login");
 
     }
 
