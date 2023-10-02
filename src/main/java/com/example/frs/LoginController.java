@@ -1,5 +1,6 @@
 package com.example.frs;
 
+import com.example.frs.animations.LabelDisappear;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,10 +14,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import com.example.frs.animations.Shake;
 
-import java.applet.Applet;
-import java.applet.AudioClip;
+
 import java.io.IOException;
-import java.net.URL;
+
 import java.sql.*;
 import java.util.Objects;
 
@@ -75,6 +75,8 @@ public class LoginController {
                stage.show();
            }
            errorLabel.setText("Invalid Credentials");
+           LabelDisappear ld=new LabelDisappear();
+           ld.disappear(errorLabel);
        }
 
    }
@@ -89,7 +91,10 @@ public class LoginController {
             Statement stmt=c.createStatement();
             ResultSet set=stmt.executeQuery(q);
             if(set.next())
-            { errorLabel.setText("username already exists");}
+            { errorLabel.setText("username already exists");
+                LabelDisappear ld=new LabelDisappear();
+                ld.disappear(errorLabel);
+            }
             else{
                 if(Objects.equals(usernamefield, "") || Objects.equals(passwordfield, ""))
                 {
@@ -108,7 +113,7 @@ public class LoginController {
                 root=loader.load();
                 FlightSearchController flightSearchController =loader.getController();
                 flightSearchController.displayName(usernamefield);
-;
+
                 //Parent root= FXMLLoader.load(getClass().getResource("Scene2.fxml"));
                 stage=(Stage)((Node)event.getSource()).getScene().getWindow();
                 scene=new Scene(root);

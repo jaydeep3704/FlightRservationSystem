@@ -50,27 +50,22 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="addFlightbtn" layoutX="98.0" layoutY="409.0" mnemonicParsing="false" onAction="#addFlight" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Add Flight" textFill="WHITE">
+      <Button fx:id="addFlightbtn" layoutX="186.0" layoutY="409.0" mnemonicParsing="false" onAction="#addFlight" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Add Flight" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Label fx:id="labelUpdate" layoutX="225.0" layoutY="499.0" prefHeight="29.0" prefWidth="581.0" textFill="#a688fa">
+      <Label fx:id="labelUpdate" layoutX="207.0" layoutY="496.0" prefHeight="29.0" prefWidth="581.0" textFill="#a688fa">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="clearBtn" layoutX="325.0" layoutY="409.0" mnemonicParsing="false" onAction="#clearbtn" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Clear" textFill="WHITE">
+      <Button fx:id="clearBtn" layoutX="420.0" layoutY="409.0" mnemonicParsing="false" onAction="#clearbtn" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Clear" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="logoutBtn" layoutX="544.0" layoutY="409.0" mnemonicParsing="false" onAction="#logout" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Logout" textFill="WHITE">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="updateBtn" layoutX="760.0" layoutY="409.0" mnemonicParsing="false" onAction="#updateFlight" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Update Flight" textFill="WHITE">
+      <Button fx:id="logoutBtn" layoutX="662.0" layoutY="409.0" mnemonicParsing="false" onAction="#logout" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Logout" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
