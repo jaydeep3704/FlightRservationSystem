@@ -12,40 +12,51 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frs.LoginController">
    <children>
-      <AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #2f2b3a;">
+      <AnchorPane prefHeight="600.0" prefWidth="408.0" styleClass="anchor">
          <children>
-            <ImageView fitHeight="54.0" fitWidth="315.0" layoutX="68.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="600.0" fitWidth="408.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="600.0" fitWidth="922.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@logo.png" />
+                  <Image url="@images/clouds.jpg" />
                </image>
             </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="450.0" prefHeight="600.0" prefWidth="550.0" style="-fx-background-color: #46424f;">
-         <children>
-            <TextField fx:id="usernametf" layoutX="137.0" layoutY="279.0" prefHeight="25.0" prefWidth="275.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #5e43f3; -fx-border-width: 0px 0px 2px 0px;">
+            <Label layoutX="63.0" layoutY="95.0" prefHeight="130.0" prefWidth="364.0" text="Elevate your travel experience with FarFly" textAlignment="CENTER" textFill="#d6e0ff" wrapText="true">
                <font>
-                  <Font size="14.0" />
-               </font></TextField>
-            <PasswordField fx:id="passwordpf" layoutX="137.0" layoutY="357.0" prefHeight="25.0" prefWidth="275.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #5e43f3; -fx-border-width: 0px 0px 2px 0px;">
+                  <Font name="Consolas" size="29.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="459.0" prefHeight="600.0" prefWidth="541.0" style="-fx-background-color: #595C5C;">
+         <children>
+            <TextField fx:id="usernametf" layoutX="137.0" layoutY="279.0" prefHeight="25.0" prefWidth="275.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #03A9F4; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="passwordpf" layoutX="137.0" layoutY="357.0" prefHeight="25.0" prefWidth="275.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #03A9F4; -fx-border-width: 0px 0px 2px 0px;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </PasswordField>
-            <Button fx:id="signup_btn" layoutX="275.0" layoutY="434.0" minHeight="30.0" mnemonicParsing="false" onAction="#signUp" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #9171f8;" text="SignUp" textFill="WHITE" />
-            <Button fx:id="login_btn" layoutX="137.0" layoutY="434.0" minHeight="30.0" mnemonicParsing="false" onAction="#login" prefWidth="125.0" style="-fx-background-color: #a688fa;" text="Login" textFill="WHITE">
+            <Button fx:id="signup_btn" layoutX="275.0" layoutY="434.0" minHeight="30.0" mnemonicParsing="false" onAction="#signUp" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #90CAF9;" text="SignUp" textFill="WHITE" />
+            <Button fx:id="loginbtn" layoutX="137.0" layoutY="434.0" minHeight="30.0" mnemonicParsing="false" onAction="#setLoginbtn" prefWidth="125.0" style="-fx-background-color: #03A9F4;" text="Login" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label fx:id="errorLabel" layoutX="138.0" layoutY="198.0" prefHeight="23.0" prefWidth="275.0" text="WELCOME" textFill="#a688fa">
+            <Label fx:id="errorLabel" layoutX="142.0" layoutY="218.0" prefHeight="23.0" prefWidth="275.0" text="login as a user" textFill="#27a1ff">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Microsoft Sans Serif" size="20.0" />
                </font>
             </Label>
+            <ImageView fitHeight="48.0" fitWidth="283.0" layoutX="142.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logoblue.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

@@ -42,44 +42,7 @@ public class LoginController {
 
 
 
-   public void login(ActionEvent event) throws SQLException, IOException {
 
-
-       Connection c = sqlDB.getConnection();
-       String password = passwordpf.getText();
-       String username = usernametf.getText();
-       AdminPassword admin=new AdminPassword();
-       if(password.equals(admin.getAdmin_password()) && username.equals(admin.getAdmin_username()))
-       {
-           SceneChanger sce=new SceneChanger();
-           sce.changeScene(event,"adminPanel.fxml","Admin Panel");
-       }
-
-
-       String query = "Select * from userinfo";
-       Statement checkCredentials = c.createStatement();
-       ResultSet set = checkCredentials.executeQuery(query);
-       while (set.next()) {
-           String name = set.getString(2);
-           String pass = set.getString(3);
-           if (Objects.equals(username, name) && Objects.equals(password, pass)) {
-               FXMLLoader loader = new FXMLLoader(getClass().getResource("flightSearch.fxml"));
-               root = loader.load();
-               FlightSearchController flightSearchController = loader.getController();
-               flightSearchController.displayName(username);
-
-               //Parent root= FXMLLoader.load(getClass().getResource("Scene2.fxml"));
-               stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-               scene = new Scene(root);
-               stage.setScene(scene);
-               stage.show();
-           }
-           errorLabel.setText("Invalid Credentials");
-           LabelDisappear ld=new LabelDisappear();
-           ld.disappear(errorLabel);
-       }
-
-   }
 
     public void signUp(ActionEvent event)
     {
@@ -129,4 +92,47 @@ public class LoginController {
         }
     }
 
+    public void setLoginbtn(ActionEvent event) {
+        try {
+            Connection c = sqlDB.getConnection();
+            String password = passwordpf.getText();
+            String username = usernametf.getText();
+            AdminPassword admin = new AdminPassword();
+            if (password.equals(admin.getAdmin_password()) && username.equals(admin.getAdmin_username())) {
+                SceneChanger sce = new SceneChanger();
+                sce.changeScene(event, "adminPanel.fxml", "Admin Panel");
+            }
+
+
+            String query = "Select * from userinfo";
+            Statement checkCredentials = c.createStatement();
+            ResultSet set = checkCredentials.executeQuery(query);
+            while (set.next()) {
+                int userid=set.getInt(1);
+                String name = set.getString(2);
+                String pass = set.getString(3);
+                if (Objects.equals(username, name) && Objects.equals(password, pass)) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("flightSearch.fxml"));
+                    root = loader.load();
+                    FlightSearchController flightSearchController = loader.getController();
+                    flightSearchController.displayName(username);
+                    DataSingleton data=DataSingleton.getInstance();
+                    data.setUserid(userid);
+
+                    //Parent root= FXMLLoader.load(getClass().getResource("Scene2.fxml"));
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+                errorLabel.setText("Invalid Credentials");
+                LabelDisappear ld = new LabelDisappear();
+                ld.disappear(errorLabel);
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

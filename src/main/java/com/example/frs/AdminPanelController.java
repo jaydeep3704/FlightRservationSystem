@@ -33,17 +33,20 @@ public class AdminPanelController {
     private Button logoutBtn;
     @FXML
     private Button updateBtn;
+    @FXML
+    private TextField ticketPrice;
 
     public void addFlight(ActionEvent event) throws SQLException {
         Connection c=sqlDB.getConnection();
 
-        String query="insert into flightinformation(flightId,Dep_City,Ar_City,DepartureDate,ArrivalDate,DepartureTime )values(ucase(?),ucase(?),ucase(?),?,?,current_time)";
+        String query="insert into flightinformation(flightId,Dep_City,Ar_City,DepartureDate,ArrivalDate,DepartureTime,ticket_price )values(ucase(?),ucase(?),ucase(?),?,?,current_time,?)";
         PreparedStatement pst=c.prepareStatement(query);
         pst.setString(1,flightIdtf.getText());
         pst.setString(2,fromtf.getText());
         pst.setString(3,totf.getText());
         pst.setString(4,((TextField)fromDate.getEditor()).getText());
         pst.setString(5,((TextField)toDate.getEditor()).getText());
+        pst.setString(6,ticketPrice.getText());
         pst.executeUpdate();
         labelUpdate.setText("Success:flight information has been recorded");
         LabelDisappear ld=new LabelDisappear();

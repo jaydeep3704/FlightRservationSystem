@@ -11,61 +11,72 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frs.FlightSearchController">
    <children>
-      <AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #2f2b3a;">
+      <AnchorPane prefHeight="600.0" prefWidth="450.0">
          <children>
-            <ImageView fitHeight="76.0" fitWidth="311.0" layoutX="70.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="600.0" fitWidth="1040.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@logo.png" />
+                  <Image url="@images/clouds.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="contactsBtn" layoutX="56.0" layoutY="400.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="161.0" style="-fx-background-color: #7a5af5;" text="Contact Us" textFill="WHITE">
+            <ImageView fitHeight="76.0" fitWidth="311.0" layoutX="85.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logoblue.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="myflightsBtn" layoutX="56.0" layoutY="400.0" mnemonicParsing="false" onAction="#setMyflightsBtn" prefHeight="44.0" prefWidth="161.0" style="-fx-background-color: #64B5F6;" text="My Flights" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="btn_logout" layoutX="240.0" layoutY="400.0" mnemonicParsing="false" onAction="#logout" prefHeight="44.0" prefWidth="161.0" style="-fx-background-color: #9171f8;" text="Logout" textFill="WHITE">
+            <Button fx:id="btn_logout" layoutX="240.0" layoutY="400.0" mnemonicParsing="false" onAction="#logout" prefHeight="44.0" prefWidth="161.0" style="-fx-background-color: #64B5F6;" text="Logout" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Button>
-            <Label fx:id="welcome_label" layoutX="91.0" layoutY="97.0" prefHeight="45.0" prefWidth="253.0" text="Welcome User" textFill="#a688fa">
+            <Label fx:id="welcome_label" layoutX="91.0" layoutY="101.0" prefHeight="45.0" prefWidth="253.0" text="Welcome User" textFill="#f2eeee">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Consolas" size="30.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="450.0" prefHeight="600.0" prefWidth="550.0" style="-fx-background-color: #46424f;">
+      <AnchorPane layoutX="450.0" prefHeight="600.0" prefWidth="550.0" style="-fx-background-color: #595C5C;">
          <children>
-            <TextField fx:id="from_field" layoutX="135.0" layoutY="119.0" prefHeight="30.0" prefWidth="275.0" promptText="From" />
-            <TextField fx:id="where_field" layoutX="135.0" layoutY="227.0" prefHeight="30.0" prefWidth="275.0" promptText="To" />
+            <TextField fx:id="from_field" layoutX="135.0" layoutY="119.0" prefHeight="30.0" prefWidth="275.0" promptText="From">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <TextField fx:id="where_field" layoutX="135.0" layoutY="227.0" prefHeight="30.0" prefWidth="275.0" promptText="To">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
             <DatePicker fx:id="dateOfFly_picker" layoutX="233.0" layoutY="332.0" prefHeight="30.0" prefWidth="177.0" />
-            <Label layoutX="66.0" layoutY="119.0" prefHeight="29.0" prefWidth="57.0" text="From" textFill="#a688fa">
+            <Label layoutX="66.0" layoutY="119.0" prefHeight="29.0" prefWidth="57.0" text="From" textFill="#27a1ff">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="66.0" layoutY="228.0" prefHeight="29.0" prefWidth="57.0" text="To" textFill="#a688fa">
+            <Label layoutX="66.0" layoutY="228.0" prefHeight="29.0" prefWidth="57.0" text="To" textFill="#27a1ff">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="66.0" layoutY="333.0" prefHeight="29.0" prefWidth="161.0" text="Date of Flight" textFill="#a688fa">
+            <Label layoutX="66.0" layoutY="333.0" prefHeight="29.0" prefWidth="161.0" text="Date of Flight" textFill="#27a1ff">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="flightsbtn" layoutX="73.0" layoutY="427.0" minHeight="30.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #a688fa;" text="Flights" textFill="WHITE">
+            <Button fx:id="flightsbtn" layoutX="73.0" layoutY="427.0" minHeight="30.0" mnemonicParsing="false" onAction="#setFlightsbtn" prefWidth="100.0" style="-fx-background-color: #64B5F6;" text="Flights" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="clearBtn" layoutX="193.0" layoutY="427.0" minHeight="30.0" mnemonicParsing="false" onAction="#clear" prefWidth="100.0" style="-fx-background-color: #a688fa;" text="Clear" textFill="WHITE">
+            <Button fx:id="clearBtn" layoutX="193.0" layoutY="427.0" minHeight="30.0" mnemonicParsing="false" onAction="#clear" prefWidth="100.0" style="-fx-background-color: #64B5F6;" text="Clear" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="searchBtn" layoutX="310.0" layoutY="427.0" minHeight="30.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #7a5af5;" text="Search" textFill="WHITE">
+            <Button fx:id="searchbtn" layoutX="310.0" layoutY="427.0" minHeight="30.0" mnemonicParsing="false" onAction="#search" prefWidth="100.0" style="-fx-background-color: #64B5F6;" text="Search" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>

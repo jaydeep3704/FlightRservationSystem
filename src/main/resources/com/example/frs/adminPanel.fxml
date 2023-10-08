@@ -9,71 +9,78 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #5e5a66;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frs.AdminPanelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="1000.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frs.AdminPanelController">
    <children>
-      <AnchorPane prefHeight="86.0" prefWidth="1000.0" style="-fx-background-color: #46424f;">
-         <children>
-            <ImageView fitHeight="43.0" fitWidth="257.0" layoutX="378.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@logo.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
+      <ImageView fitHeight="563.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/mountains.jpg" />
+         </image>
+      </ImageView>
       <TextField fx:id="flightIdtf" layoutX="186.0" layoutY="141.0" prefHeight="36.0" prefWidth="234.0" promptText="Flight Id" />
-      <Label layoutX="84.0" layoutY="145.0" prefHeight="29.0" prefWidth="96.0" text="Flight ID" textFill="#a688fa">
+      <Label layoutX="75.0" layoutY="145.0" prefHeight="29.0" prefWidth="96.0" text="Flight ID" textFill="#ffe9e9">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="84.0" layoutY="224.0" prefHeight="29.0" prefWidth="96.0" text="From" textFill="#a688fa">
+      <Label layoutX="75.0" layoutY="300.0" prefHeight="29.0" prefWidth="96.0" text="From" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="fromtf" layoutX="186.0" layoutY="221.0" prefHeight="36.0" prefWidth="234.0" promptText="From" />
-      <Label layoutX="84.0" layoutY="310.0" prefHeight="29.0" prefWidth="96.0" text="To" textFill="#a688fa">
+      <TextField fx:id="fromtf" layoutX="186.0" layoutY="297.0" prefHeight="36.0" prefWidth="234.0" promptText="From" />
+      <Label layoutX="545.0" layoutY="304.0" prefHeight="29.0" prefWidth="96.0" text="To" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="totf" layoutX="186.0" layoutY="306.0" prefHeight="36.0" prefWidth="234.0" promptText="To" />
+      <TextField fx:id="totf" layoutX="681.0" layoutY="300.0" prefHeight="36.0" prefWidth="234.0" promptText="To" />
       <DatePicker fx:id="fromDate" layoutX="681.0" layoutY="141.0" prefHeight="36.0" prefWidth="182.0" promptText="Departure Date" />
       <DatePicker fx:id="toDate" layoutX="681.0" layoutY="217.0" prefHeight="36.0" prefWidth="182.0" promptText="Arrival Date" />
-      <Label layoutX="544.0" layoutY="145.0" prefHeight="29.0" prefWidth="118.0" text="Departure Date" textFill="#a688fa">
+      <Label layoutX="537.0" layoutY="145.0" prefHeight="29.0" prefWidth="125.0" text="Departure Date" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="544.0" layoutY="221.0" prefHeight="29.0" prefWidth="118.0" text="Arrival Date" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="addFlightbtn" layoutX="98.0" layoutY="452.0" mnemonicParsing="false" onAction="#addFlight" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #64B5F6;" text="Add Flight" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelUpdate" layoutX="225.0" layoutY="518.0" prefHeight="29.0" prefWidth="581.0" textFill="#a688fa">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="544.0" layoutY="221.0" prefHeight="29.0" prefWidth="118.0" text="Arrival Date" textFill="#a688fa">
+      <Button fx:id="clearBtn" layoutX="325.0" layoutY="452.0" mnemonicParsing="false" onAction="#clearbtn" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #64B5F6;" text="Clear" textFill="WHITE">
          <font>
             <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="logoutBtn" layoutX="545.0" layoutY="452.0" mnemonicParsing="false" onAction="#logout" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #64B5F6;" text="Logout" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="updateBtn" layoutX="768.0" layoutY="452.0" mnemonicParsing="false" onAction="#updateFlight" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #64B5F6;" text="Update Flight" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="ticketPrice" layoutX="186.0" layoutY="221.0" prefHeight="36.0" prefWidth="234.0" promptText="Enter Ticket Price" />
+      <Label layoutX="75.0" layoutY="225.0" prefHeight="29.0" prefWidth="96.0" text="Price" textFill="#fffdfd">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="addFlightbtn" layoutX="98.0" layoutY="409.0" mnemonicParsing="false" onAction="#addFlight" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Add Flight" textFill="WHITE">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Label fx:id="labelUpdate" layoutX="225.0" layoutY="499.0" prefHeight="29.0" prefWidth="581.0" textFill="#a688fa">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Button fx:id="clearBtn" layoutX="325.0" layoutY="409.0" mnemonicParsing="false" onAction="#clearbtn" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Clear" textFill="WHITE">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="logoutBtn" layoutX="544.0" layoutY="409.0" mnemonicParsing="false" onAction="#logout" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Logout" textFill="WHITE">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="updateBtn" layoutX="760.0" layoutY="409.0" mnemonicParsing="false" onAction="#updateFlight" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #a688fa;" text="Update Flight" textFill="WHITE">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
+      <ImageView fitHeight="53.0" fitWidth="271.0" layoutX="365.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logoblue.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -1,9 +1,8 @@
+// FlightSearchController.java
 package com.example.frs;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
-
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -19,51 +18,56 @@ public class FlightSearchController {
     @FXML
     private Button btn_logout;
 
-
     @FXML
     private Button clearBtn;
 
-    @FXML
-    private Button contactsBtn;
+
 
     @FXML
     private DatePicker dateOfFly_picker;
 
     @FXML
-    private TextField from_field;
+    public TextField from_field,where_field;
 
     @FXML
-    private Button searchBtn;
+    private Button searchbtn,myflightsBtn,flightsbtn;
+
+
 
     @FXML
-    private TextField where_field;
-
-    @FXML
-    private Button flightsbtn;
-
-    @FXML
-
     public void logout(ActionEvent event) throws IOException {
-
-        SceneChanger sChanger=new SceneChanger();
-        sChanger.changeScene(event,"login.fxml","Login");
-
+        SceneChanger sChanger = new SceneChanger();
+        sChanger.changeScene(event, "login.fxml", "Login");
     }
 
-    public void displayName(String username)
-    {
-        welcome_label.setText("Hello "+username);
+    public void displayName(String username) {
+        welcome_label.setText("Hello " + username);
     }
 
-
-
-    public void clear(ActionEvent event)
-    {
-        from_field.clear();         //clear text fields
+    public void clear(ActionEvent event) {
+        from_field.clear();
         where_field.clear();
     }
 
+    public void setFlightsbtn(ActionEvent event) throws IOException {
+        SceneChanger sc = new SceneChanger();
+        sc.changeScene(event, "Search-view.fxml", "search view");
+    }
 
+    public void search(ActionEvent event) throws IOException {
+
+
+        SearchViewController sv=new SearchViewController();
+
+      TextFieldUtils t=new TextFieldUtils();
+        DataSingleton data=DataSingleton.getInstance();
+        data.setFrom_city(from_field.getText());
+        data.setTo_city(where_field.getText());
+        SceneChanger sc = new SceneChanger();
+        sc.changeScene(event, "Search-view.fxml", "search view");
+    }
+    public void setMyflightsBtn(ActionEvent event) throws IOException {
+        SceneChanger sc=new SceneChanger();
+        sc.changeScene(event,"userBookings.fxml","My Bookings");
+    }
 }
-
-

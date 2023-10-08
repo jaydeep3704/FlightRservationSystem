@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -10,45 +11,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="733.0" style="-fx-background-color: #2f2b3a;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.moveacircle.SearchViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="1080.0" style="-fx-background-color: #46424f;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frs.SearchViewController">
     <children>
-        <AnchorPane layoutX="-1.0" layoutY="96.0" prefHeight="379.0" prefWidth="733.0" style="-fx-background-color: #46424f;">
-            <children>
-                <Button fx:id="backToSearch" layoutX="25.0" layoutY="304.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: #9171f8;" text="Back" textFill="WHITE">
-                    <font>
-                        <Font name="Calibri" size="17.0" />
-                    </font>
-                </Button>
-            <TextField fx:id="from_field" layoutX="25.0" layoutY="14.0" prefHeight="26.0" prefWidth="172.0" promptText="From:" />
-            <TextField fx:id="where_field" layoutX="269.0" layoutY="14.0" mouseTransparent="true" prefHeight="26.0" prefWidth="190.0" promptText="Where" />
-            <DatePicker fx:id="datapicker" layoutX="518.0" layoutY="14.0" prefHeight="26.0" prefWidth="155.0" />
-                <Button fx:id="nextBookingBtn" layoutX="595.0" layoutY="304.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #7a5af5;" text="Next" textFill="WHITE">
-                    <font>
-                        <Font name="Calibri" size="18.0" />
-                    </font>
-                </Button>
-            <TableView fx:id="tableFlight" editable="true" layoutX="25.0" layoutY="50.0" prefHeight="225.0" prefWidth="650.0">
-              <columns>
-                <TableColumn fx:id="fromFlightColumn" prefWidth="152.8000545501709" text="From" />
-                <TableColumn fx:id="iataFromColumn" prefWidth="44.0" text="IATA" />
-                  <TableColumn fx:id="whereFlightColumn" prefWidth="188.79998779296875" text="Where" />
-                  <TableColumn fx:id="iataWhereColumn" prefWidth="40.0" text="IATA" />
-                  <TableColumn fx:id="dateFromColumn" prefWidth="72.79995727539062" text="Date From" />
-                  <TableColumn fx:id="dateWhereColumn" prefWidth="82.4000244140625" text="Date Where" />
-                  <TableColumn fx:id="price" prefWidth="75.199951171875" text="Price" />
-              </columns>
-            </TableView>
-            <TextField fx:id="idflight" alignment="CENTER" layoutX="459.0" layoutY="304.0" prefHeight="34.0" prefWidth="104.0" promptText="ID of the Flight ">
-               <font>
-                  <Font name="Calibri" size="14.0" />
-               </font>
-            </TextField>
-            </children>
-        </AnchorPane>
-      <ImageView fitHeight="56.0" fitWidth="276.0" layoutX="204.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="610.0" fitWidth="1086.0" layoutX="-3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@logo.png" />
+            <Image url="@images/mountains.jpg" />
          </image>
       </ImageView>
+      <TableView fx:id="tableFlight" editable="true" layoutX="76.0" layoutY="114.0" prefHeight="405.0" prefWidth="933.0">
+        <columns>
+          <TableColumn fx:id="fromFlightColumn" prefWidth="166.0" text="From" />
+            <TableColumn fx:id="toFlightColumn" prefWidth="166.0" text="To" />
+            <TableColumn fx:id="depDate" prefWidth="147.0" text="Departure Date" />
+            <TableColumn fx:id="arDate" prefWidth="151.0" text="Arrival Date" />
+            <TableColumn fx:id="price" prefWidth="134.0" text="Price" />
+            <TableColumn fx:id="flightId" prefWidth="140.0" text="Flight Id" />
+        </columns>
+      </TableView>
+      <TextField fx:id="to_field" layoutX="762.0" layoutY="60.0" prefHeight="35.0" prefWidth="201.0" promptText="Enter a city" />
+      <DatePicker fx:id="datapicker" layoutX="607.0" layoutY="-131.0" prefHeight="26.0" prefWidth="155.0" />
+      <TextField fx:id="from_field" layoutX="146.0" layoutY="59.0" prefHeight="35.0" prefWidth="213.0" promptText="Enter a city" />
+      <Label layoutX="84.0" layoutY="60.0" prefHeight="26.0" prefWidth="51.0" text="From" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="718.0" layoutY="62.0" prefHeight="30.0" prefWidth="37.0" text="To" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="flightidtf" layoutX="252.0" layoutY="547.0" prefHeight="35.0" prefWidth="150.0" promptText="Enter Flight ID" />
+      <Label layoutX="84.0" layoutY="550.0" prefHeight="30.0" prefWidth="128.0" text="Enter Flight ID" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="bookFlightBtn" layoutX="809.0" layoutY="547.0" mnemonicParsing="false" onAction="#bookFlight" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #90CAF9; -fx-border-radius: 35px;" text="Book Flight" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
