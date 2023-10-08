@@ -129,4 +129,9 @@ public class SearchViewController implements Initializable {
         data.setFlightid(flightidtf.getText());
 
     }
+
+    public void back(ActionEvent event) throws IOException{
+        SceneChanger sc=new SceneChanger();
+        sc.changeScene(event,"flightSearch.fxml","Search Flights");
+    }
 }

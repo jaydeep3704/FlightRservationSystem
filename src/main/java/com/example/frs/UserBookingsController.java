@@ -104,4 +104,9 @@ public class UserBookingsController implements Initializable {
         }
     }
 
+    public void cancelFlight(ActionEvent event) throws IOException {
+        SceneChanger sc=new SceneChanger();
+        sc.changeScene(event,"cancelFlight.fxml","Cancel Flight");
+    }
+
 }
