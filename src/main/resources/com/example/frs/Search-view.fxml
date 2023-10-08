@@ -52,5 +52,10 @@
             <Font size="16.0" />
          </font>
       </Button>
+      <Button fx:id="bookFlightBtn1" layoutX="562.0" layoutY="547.0" mnemonicParsing="false" onAction="#bookFlight" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #90CAF9; -fx-border-radius: 35px;" text="Back" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

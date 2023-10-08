@@ -1,10 +1,11 @@
 package com.example.frs;
 
 public class MyBookings {
-    private String bookingId,flightId,from,to,passengerName,departureDate,time;
+    private String flightId,from,to,passengerName,departureDate,time;
+    private int bookingid;
 
-    public MyBookings(String bookingId, String flightId, String from, String to, String passengerName, String departureDate,String time) {
-        this.bookingId = bookingId;
+    public MyBookings(int bookingid, String flightId, String from, String to, String passengerName, String departureDate, String time) {
+        this.bookingid = bookingid;
         this.flightId = flightId;
         this.from = from;
         this.to = to;
@@ -21,12 +22,12 @@ public class MyBookings {
         this.time = time;
     }
 
-    public String getBookingId() {
-        return bookingId;
+    public int getBookingId() {
+        return bookingid;
     }
 
-    public void setBookingId(String bookingId) {
-        this.bookingId = bookingId;
+    public void setBookingId(int bookingId) {
+        this.bookingid = bookingId;
     }
 
     public String getFlightId() {

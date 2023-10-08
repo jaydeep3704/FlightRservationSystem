@@ -15,7 +15,7 @@
             <Image url="@images/skyimg.jpg" />
          </image>
       </ImageView>
-      <TableView layoutX="42.0" layoutY="53.0" prefHeight="364.0" prefWidth="923.0">
+      <TableView fx:id="passengerInfo" layoutX="42.0" layoutY="53.0" prefHeight="364.0" prefWidth="923.0">
         <columns>
           <TableColumn fx:id="bookingId" prefWidth="91.0" text="Booking Id" />
           <TableColumn fx:id="flightId" prefWidth="105.0" text="Flight Id" />

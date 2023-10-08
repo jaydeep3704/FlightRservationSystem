@@ -26,7 +26,7 @@ public class UserBookingsController implements Initializable {
 
 
     @FXML
-    private TableColumn<MyBookings,String> bookingId;
+    private TableColumn<MyBookings,Integer> bookingId;
 
     @FXML
     private TableColumn<MyBookings, String> departureDate;
@@ -64,22 +64,21 @@ public class UserBookingsController implements Initializable {
 
             while (set.next()) {
                 String flight_id = set.getString("flightid");
-                String booking_id = set.getString("bookingid");
-                String from=set.getString("Dep_City");
+                Integer booking_id = set.getInt("bookingid");
+                String from = set.getString("Dep_City");
                 String to = set.getString("Ar_City");
-                String pName= set.getString("name");
+                String pName = set.getString("name");
                 String DepDate = set.getString("DepartureDate");
-                String time= set.getString("time");
+                String time = set.getString("time");
 
-
-                bookingsObservableList.add(new MyBookings(booking_id,flight_id,from,to,pName,DepDate,time));
+                bookingsObservableList.add(new MyBookings(booking_id, flight_id, from, to, pName, DepDate, time));
             }
-            flightId.setCellValueFactory(new PropertyValueFactory<>("flight_id"));
-            bookingId.setCellValueFactory(new PropertyValueFactory<>("booking_id"));
+            flightId.setCellValueFactory(new PropertyValueFactory<>("flightId"));
+            bookingId.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
             from.setCellValueFactory(new PropertyValueFactory<>("from"));
             to.setCellValueFactory(new PropertyValueFactory<>("to"));
-            passengerName.setCellValueFactory(new PropertyValueFactory<>("pName"));
-            departureDate.setCellValueFactory(new PropertyValueFactory<>("DepDate"));
+            passengerName.setCellValueFactory(new PropertyValueFactory<>("passengerName"));
+            departureDate.setCellValueFactory(new PropertyValueFactory<>("departureDate"));
             departureTime.setCellValueFactory(new PropertyValueFactory<>("time"));
 
             passengerInfo.setItems(bookingsObservableList);
