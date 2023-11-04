@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="608.0" fitWidth="1116.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/mountains.jpg" />
+            <Image url="@images/bg/2150895681.jpg" />
          </image>
       </ImageView>
       <TextField fx:id="name_tf" layoutX="165.0" layoutY="117.0" prefHeight="35.0" prefWidth="335.0" promptText="Enter your Full Name">
@@ -22,7 +22,7 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <Label layoutX="91.0" layoutY="121.0" prefHeight="27.0" prefWidth="60.0" text="Name" textFill="#f5eded">
+      <Label layoutX="91.0" layoutY="121.0" prefHeight="27.0" prefWidth="60.0" text="Name">
          <font>
             <Font size="18.0" />
          </font>
@@ -42,22 +42,22 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <Label layoutX="91.0" layoutY="188.0" prefHeight="27.0" prefWidth="60.0" text="Age" textFill="#f5eded">
+      <Label layoutX="91.0" layoutY="188.0" prefHeight="27.0" prefWidth="60.0" text="Age">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="256.0" prefHeight="27.0" prefWidth="68.0" text="Address" textFill="#f5eded">
+      <Label layoutX="83.0" layoutY="256.0" prefHeight="27.0" prefWidth="68.0" text="Address">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="329.0" prefHeight="27.0" prefWidth="68.0" text="Email Id" textFill="#f5eded">
+      <Label layoutX="83.0" layoutY="329.0" prefHeight="27.0" prefWidth="68.0" text="Email Id">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="Male" layoutX="165.0" layoutY="400.0" mnemonicParsing="false" onAction="#getGender" prefHeight="39.0" prefWidth="99.0" text="Male" textFill="#cccccc">
+      <RadioButton fx:id="Male" layoutX="165.0" layoutY="400.0" mnemonicParsing="false" onAction="#getGender" prefHeight="39.0" prefWidth="99.0" text="Male" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
@@ -65,17 +65,17 @@
             <ToggleGroup fx:id="gender" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="Female" layoutX="254.0" layoutY="406.0" mnemonicParsing="false" onAction="#getGender" prefHeight="27.0" prefWidth="99.0" text="Female" textFill="#cccccc" toggleGroup="$gender">
+      <RadioButton fx:id="Female" layoutX="254.0" layoutY="406.0" mnemonicParsing="false" onAction="#getGender" prefHeight="27.0" prefWidth="99.0" text="Female" textFill="WHITE" toggleGroup="$gender">
          <font>
             <Font size="16.0" />
          </font>
       </RadioButton>
-      <Label layoutX="87.0" layoutY="406.0" prefHeight="27.0" prefWidth="68.0" text="Gender" textFill="#f5eded">
+      <Label layoutX="87.0" layoutY="406.0" prefHeight="27.0" prefWidth="68.0" text="Gender" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="630.0" layoutY="121.0" prefHeight="27.0" prefWidth="60.0" text="DOB" textFill="#f5eded">
+      <Label layoutX="630.0" layoutY="121.0" prefHeight="27.0" prefWidth="60.0" text="DOB">
          <font>
             <Font size="18.0" />
          </font>
@@ -90,7 +90,7 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <Label layoutX="630.0" layoutY="184.0" prefHeight="27.0" prefWidth="84.0" text="Phone No" textFill="#f5eded">
+      <Label layoutX="630.0" layoutY="184.0" prefHeight="27.0" prefWidth="84.0" text="Phone No">
          <font>
             <Font size="18.0" />
          </font>
@@ -100,12 +100,12 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <Label layoutX="630.0" layoutY="256.0" prefHeight="27.0" prefWidth="91.0" text="Nationality" textFill="#f5eded">
+      <Label layoutX="630.0" layoutY="256.0" prefHeight="27.0" prefWidth="91.0" text="Nationality">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="630.0" layoutY="329.0" prefHeight="27.0" prefWidth="91.0" text="Passport" textFill="#f5eded">
+      <Label layoutX="630.0" layoutY="329.0" prefHeight="27.0" prefWidth="91.0" text="Passport">
          <font>
             <Font size="18.0" />
          </font>
@@ -127,8 +127,9 @@
       </Button>
       <ImageView fitHeight="48.0" fitWidth="303.0" layoutX="402.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/logoblue.png" />
+            <Image url="@images/logoblack.png" />
          </image>
       </ImageView>
+      <Label fx:id="phoneLabel" layoutX="741.0" layoutY="219.0" prefHeight="17.0" prefWidth="190.0" textFill="RED" />
    </children>
 </AnchorPane>

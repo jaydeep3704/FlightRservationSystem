@@ -1,7 +1,11 @@
 package com.example.frs;
 
 import com.example.frs.animations.LabelDisappear;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -13,11 +17,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import com.example.frs.animations.Shake;
+import javafx.util.Duration;
 
 
 import java.io.IOException;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
 
@@ -39,57 +46,15 @@ public class LoginController {
     @FXML
     private Button signup_btn;
 
+    private volatile boolean stop=false;
 
 
 
 
 
-    public void signUp(ActionEvent event)
-    {
-        try{
-            Connection c=sqlDB.getConnection();
-            String passwordfield=passwordpf.getText();
-            String usernamefield=usernametf.getText();
-            String q="select * from userinfo where username='"+usernamefield+"'";
-            Statement stmt=c.createStatement();
-            ResultSet set=stmt.executeQuery(q);
-            if(set.next())
-            { errorLabel.setText("username already exists");
-                LabelDisappear ld=new LabelDisappear();
-                ld.disappear(errorLabel);
-            }
-            else{
-                if(Objects.equals(usernamefield, "") || Objects.equals(passwordfield, ""))
-                {
-                    Shake shake=new Shake(usernametf);
-                    shake.playAnim();
-                    Shake shake1=new Shake(passwordpf);
-                    shake1.playAnim();
-                }
-                else{
-                q="INSERT INTO userInfo(username,password) values (?,?)";
-                PreparedStatement pstmt= c.prepareStatement(q);
-                pstmt.setString(1,usernamefield);
-                pstmt.setString(2,passwordfield);
-                pstmt.executeUpdate();
-                FXMLLoader loader=new FXMLLoader(getClass().getResource("flightSearch.fxml"));
-                root=loader.load();
-                FlightSearchController flightSearchController =loader.getController();
-                flightSearchController.displayName(usernamefield);
-
-                //Parent root= FXMLLoader.load(getClass().getResource("Scene2.fxml"));
-                stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-                scene=new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-                }
-            }
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+    public void signUp(ActionEvent event) throws IOException {
+       SceneChanger sc= new SceneChanger();
+       sc.changeScene(event,"signup.fxml","SignUp");
     }
 
     public void setLoginbtn(ActionEvent event) {
@@ -118,7 +83,7 @@ public class LoginController {
                     flightSearchController.displayName(username);
                     DataSingleton data=DataSingleton.getInstance();
                     data.setUserid(userid);
-
+                    data.setUsername(name);
                     //Parent root= FXMLLoader.load(getClass().getResource("Scene2.fxml"));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
@@ -135,4 +100,7 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+
+
+
 }

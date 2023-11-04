@@ -55,9 +55,10 @@ public class UserBookingsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         Connection c=sqlDB.getConnection();
-        String query="SELECT bookinginfo.flightid,bookingid,Dep_City,Ar_City,name,DepartureDate,CONVERT(DepartureTime,CHAR) as time FROM flightinformation\n" +
+        DataSingleton d=DataSingleton.getInstance();
+        String query="SELECT bookinginfo.flightid,bookingid,Dep_City,Ar_City,name,DepartureDate,CONVERT(DepartureTime,CHAR) as time FROM flightinformation\n "+
                 "JOIN bookinginfo ON bookinginfo.flightid=flightinformation.flightId\n" +
-                "JOIN userinfo ON bookinginfo.userid=userinfo.userId;";
+                "JOIN userinfo ON bookinginfo.userid=userinfo.userId where username='"+d.getUsername()+"';";
         try {
             Statement statement = c.createStatement();
             ResultSet set = statement.executeQuery(query);

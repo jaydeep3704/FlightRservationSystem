@@ -3,10 +3,18 @@ package com.example.frs;
 public class DataSingleton {
     public static final DataSingleton instance=new DataSingleton();
     private int userid;
-    private String flightid,from_city,to_city;
+    private String flightid,from_city,to_city,username;
 
     public String getFrom_city() {
         return from_city;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setFrom_city(String from_city) {

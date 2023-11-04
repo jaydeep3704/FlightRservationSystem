@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="592.0" fitWidth="1006.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/skyimg.jpg" />
+            <Image url="@images/bg/skyimg.jpg" />
          </image>
       </ImageView>
       <TableView fx:id="passengerInfo" layoutX="42.0" layoutY="53.0" prefHeight="364.0" prefWidth="923.0">

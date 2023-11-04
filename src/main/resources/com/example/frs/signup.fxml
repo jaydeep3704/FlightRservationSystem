@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frs.LoginController">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frs.signupController">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="408.0" styleClass="anchor">
          <children>
@@ -41,13 +41,13 @@
                   <Font size="16.0" />
                </font>
             </PasswordField>
-            <Button fx:id="signup_btn" layoutX="275.0" layoutY="434.0" minHeight="30.0" mnemonicParsing="false" onAction="#signUp" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #90CAF9;" text="SignUp" textFill="WHITE" />
-            <Button fx:id="loginbtn" layoutX="137.0" layoutY="434.0" minHeight="30.0" mnemonicParsing="false" onAction="#setLoginbtn" prefWidth="125.0" style="-fx-background-color: #03A9F4;" text="Login" textFill="WHITE">
+            <Button fx:id="signup_btn" layoutX="287.0" layoutY="497.0" minHeight="30.0" mnemonicParsing="false" onAction="#signUp" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #90CAF9;" text="SignUp" textFill="WHITE" />
+            <Button fx:id="login_back" layoutX="137.0" layoutY="497.0" minHeight="30.0" mnemonicParsing="false" onAction="#backToLogin" prefWidth="125.0" style="-fx-background-color: #03A9F4;" text="Login" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label fx:id="errorLabel" layoutX="142.0" layoutY="218.0" prefHeight="23.0" prefWidth="275.0" text="login as a user" textFill="WHITE">
+            <Label fx:id="errorLabel" layoutX="138.0" layoutY="213.0" prefHeight="23.0" prefWidth="275.0" text="SIGNUP " textFill="WHITE">
                <font>
                   <Font name="Microsoft Sans Serif" size="20.0" />
                </font>
@@ -70,6 +70,16 @@
             <ImageView fitHeight="48.0" fitWidth="283.0" layoutX="132.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/logoblue.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="emailtf" layoutX="137.0" layoutY="427.0" prefHeight="25.0" prefWidth="275.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #03A9F4; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="85.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icon/email.png" />
                </image>
             </ImageView>
          </children>

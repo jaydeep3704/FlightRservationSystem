@@ -13,11 +13,11 @@
    <children>
       <ImageView fitHeight="563.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/mountains.jpg" />
+            <Image url="@images/bg/flight2.jpg" />
          </image>
       </ImageView>
       <TextField fx:id="flightIdtf" layoutX="186.0" layoutY="141.0" prefHeight="36.0" prefWidth="234.0" promptText="Flight Id" />
-      <Label layoutX="75.0" layoutY="145.0" prefHeight="29.0" prefWidth="96.0" text="Flight ID" textFill="#ffe9e9">
+      <Label layoutX="75.0" layoutY="145.0" prefHeight="29.0" prefWidth="96.0" text="Flight ID" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -72,14 +72,14 @@
          </font>
       </Button>
       <TextField fx:id="ticketPrice" layoutX="186.0" layoutY="221.0" prefHeight="36.0" prefWidth="234.0" promptText="Enter Ticket Price" />
-      <Label layoutX="75.0" layoutY="225.0" prefHeight="29.0" prefWidth="96.0" text="Price" textFill="#fffdfd">
+      <Label layoutX="75.0" layoutY="225.0" prefHeight="29.0" prefWidth="96.0" text="Price" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <ImageView fitHeight="53.0" fitWidth="271.0" layoutX="365.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/logoblue.png" />
+            <Image url="@images/logoblack.png" />
          </image>
       </ImageView>
    </children>
